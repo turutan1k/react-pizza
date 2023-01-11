@@ -19,6 +19,7 @@ export default function Categories() {
                 <ul className="list">
                     {categories.map((category, i) => (
                         <li
+                            key={i}
                             className={
                                 activeIndex === i ? 'item active' : 'item'
                             }

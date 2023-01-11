@@ -1,14 +1,7 @@
 import React from 'react';
-import CardImage from './../../assets/images/cheese__chicken.png';
-export default function PizzaBlock({
-    imageUrl,
-    title,
-    sizes,
-    types,
-    price,
-}) {
+
+export default function PizzaBlock({ imageUrl, title, sizes, types, price }) {
     const typeNames = ['тонкое', 'традиционное'];
-    console.log(typeNames);
     let [pizzaCount, setPizzaCount] = React.useState(0);
     const onClickAdd = () => {
         setPizzaCount(pizzaCount + 1);
@@ -31,6 +24,7 @@ export default function PizzaBlock({
                         <ul className="variety">
                             {types.map((type, i) => (
                                 <li
+                                    key={type}
                                     className={
                                         activeIndexVariety === i
                                             ? 'item active'
@@ -45,6 +39,7 @@ export default function PizzaBlock({
                         <ul className="size">
                             {sizes.map((size, i) => (
                                 <li
+                                    key={size}
                                     className={
                                         activeIndexSize === i
                                             ? 'item active'

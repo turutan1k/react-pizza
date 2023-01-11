@@ -56,6 +56,8 @@ a {
 
 html,
 body {
+    cursor: default;
+    user-select: none;
     font-family: "Nunito", sans-serif;
     background: #ffdf8c;
     &.lock {
@@ -90,6 +92,7 @@ body {
             display: flex;
             align-items: center;
             img {
+                pointer-events: none;
                 width: 38px;
                 height: 38px;
                 margin-right: 17px;
@@ -194,7 +197,9 @@ body {
                             padding: 13.5px 36px;
                             border-radius: 30px;
                             margin-right: 9px;
+                            cursor: pointer;
                             .img &:hover {
+                                pointer-events: none;
                                 color: #fff;
                                 background: rgba(40, 40, 40, 0.6);
                                 padding: 13.5px 36px;
@@ -231,7 +236,7 @@ body {
                         .button {
                             font-weight: 400;
                             font-size: 14px;
-                            line-height: 17px;
+                            line-height: 16px;
                             background-color: #fff;
                             border: none;
                             color: #fe5f1e;
@@ -241,6 +246,7 @@ body {
                             }
                         }
                         .img {
+                            pointer-events: none;
                             &.__open {
                                 transition: all 0.4s ease-out;
                             }
@@ -277,9 +283,9 @@ body {
                         background-color: #fff;
                         color: #000;
                         padding: 10px 0px 11px 14px;
+                        cursor: pointer;
                         &:hover {
                             background: rgba(254, 95, 30, 0.05);
-                            color: #fe5f1e;
                             cursor: pointer;
                             transition: 0.3s linear;
                         }
@@ -307,18 +313,24 @@ body {
                 width: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: flex-start;
                 flex-wrap: wrap;
                 padding: 0px 47.5px 0px 47.5px;
                 .card {
-                    margin: 0px 15px 65px 15px;
+                    margin: 0px 16px 65px 15px;
                     background: #fff;
                     .item {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
+                        .empty {
+                            width: 280px;
+                            height: 457px;
+                            background: #000;
+                        }
                         img {
+                            pointer-events: none;
                             width: 260px;
                             height: 260px;
                         }
@@ -436,6 +448,7 @@ body {
                                 border-radius: 30px;
                                 padding: 8px;
                                 img {
+                                    pointer-events: none;
                                     width: 12px;
                                     height: 12px;
                                     margin: 0px 8px 0px 3px;
@@ -486,11 +499,6 @@ body {
                 }
             }
         }
-    }
-    .footer {
-        display: none;
-        z-index: -1;
-        visibility: hidden;
     }
 }
 
@@ -559,8 +567,11 @@ body {
             .cards {
                 .container {
                     padding: 20px 27.5px 20px 27.5px;
+                    justify-content: center;
                 }
             }
+        }
+        .footer {
         }
     }
 }
