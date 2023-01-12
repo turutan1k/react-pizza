@@ -2,6 +2,7 @@ import React from 'react';
 import Bucket from './Bucket';
 import Burger from './Burger';
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
@@ -9,7 +10,9 @@ export default function Header() {
             <div className="container">
                 <Burger />
                 <Logo />
-                <Bucket />
+                <Link to="cart">
+                    <Bucket />
+                </Link>
             </div>
         </header>
     );

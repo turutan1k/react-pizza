@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Categories() {
     let [activeIndex, setActiveIndex] = React.useState(0);
@@ -18,15 +19,17 @@ export default function Categories() {
             <nav className="category">
                 <ul className="list">
                     {categories.map((category, i) => (
-                        <li
-                            key={i}
-                            className={
-                                activeIndex === i ? 'item active' : 'item'
-                            }
-                            onClick={() => OnSetActiveIndex(i)}
-                        >
-                            {category}
-                        </li>
+                        <Link>
+                            <li
+                                key={i}
+                                className={
+                                    activeIndex === i ? 'item active' : 'item'
+                                }
+                                onClick={() => OnSetActiveIndex(i)}
+                            >
+                                {category}
+                            </li>
+                        </Link>
                     ))}
                 </ul>
             </nav>
